@@ -1,118 +1,117 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Roboto_Condensed } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const posts = [
+  {
+    title: "Find gamer teammates web app",
+    url: "www.dachi.lol/",
+  },
+  {
+    title: "Ethereum transaction crawler",
+    url: "https://ethereum-transaction-crawler-beta.vercel.app/",
+  },
+  {
+    title: "MicroJava compiler",
+    url: "https://github.com/brkagithub/micro-java-compiler",
+  },
+  {
+    title: "Operating system simplified kernel",
+    url: "https://github.com/brkagithub/operatingSystemKernel",
+  },
+  {
+    title: "Django educational web app",
+    url: "https://github.com/brkagithub/PSIlearnopedia",
+  },
+  {
+    title: "Web shop Dockerized API",
+    url: "https://github.com/brkagithub/shopAPIdocker",
+  },
+  {
+    title:
+      "Bachelor thesis - Development of type safe web applications in TypeScript",
+    url: "https://www.linkedin.com/in/marko-brkic-82b29498/overlay/1635537940401/single-media-viewer/?profileId=ACoAABSv0KMBGbnxV1i5wA2E_T27F4uTF1o0XsA",
+  },
+];
+
+const random = [
+  {
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/marko-brkic-82b29498/",
+  },
+  {
+    title: "GitHub",
+    url: "https://github.com/brkagithub",
+  },
+  {
+    title: "Twitch",
+    url: "https://www.twitch.tv/brka1",
+  },
+  {
+    title: "OP.GG",
+    url: "https://www.op.gg/summoners/euw/nomarkspotify",
+  },
+  {
+    title: "Discord username: brka",
+    url: "#",
+    target: "_self",
+  },
+];
+
+const roboto = Roboto_Condensed({ subsets: ["latin"], weight: ["400"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+    <div
+      className={
+        "max-w-6xl mx-auto mt-4 flex flex-col text-lg " + roboto.className
+      }
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div className="text-xl">Projects:</div>
+      <div className="p-2"></div>
+      {posts.map((post, index) => (
+        <a
+          className="flex pb-2 flex-grow-0 self-start underline underline-offset-4"
+          key={index}
+          href={post.url}
+          target="_blank"
+        >
+          {post.title}
+        </a>
+      ))}
+      <div className="p-4"></div>
+      <div>
+        Currently working at{" "}
+        <a
+          className="text-purple-600 underline underline-offset-4"
+          href="https://origintrail.io/"
+          target="_blank"
+        >
+          OriginTrail
+        </a>
+        , mainly focused on NodeJS, AI, blockchain and working on our{" "}
+        <a
+          className="underline underline-offset-4"
+          href="https://github.com/OriginTrail"
+          target="_blank"
+        >
+          open source projects
+        </a>
+        . Very interested in AI and planning to combine it along with my biggest
+        hobby - gaming 🎮 for a side project very soon.
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <div className="p-4"></div>
+      <div className="text-xl">Some random links:</div>
+      <div className="p-2"></div>
+      {random.map((random_thingy, index) => (
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          className="flex pb-2 flex-grow-0 self-start underline underline-offset-4"
+          key={index}
+          href={random_thingy.url}
+          target={random_thingy.target || "_blank"}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
+          {random_thingy.title}
         </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      ))}
+      <div className="p-2"></div>
+    </div>
+  );
 }
