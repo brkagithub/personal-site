@@ -62,7 +62,8 @@ export default function Home() {
   return (
     <div
       className={
-        "max-w-6xl mx-auto mt-4 flex flex-col text-lg " + roboto.className
+        "max-w-6xl mx-auto mt-4 p-2 lg:p-0 flex flex-col text-lg " +
+        roboto.className
       }
     >
       <div className="text-xl">Projects:</div>
