@@ -3,7 +3,7 @@ import { Roboto_Condensed } from "next/font/google";
 const posts = [
   {
     title: "Find gamer teammates web app",
-    url: "www.dachi.lol/",
+    url: "https://dachi.lol/",
   },
   {
     title: "Ethereum transaction crawler",
